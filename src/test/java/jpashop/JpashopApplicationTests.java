@@ -1,0 +1,5 @@
+package jpashop;
+
+class JpashopApplicationTests {
+
+}
