@@ -1,7 +1,6 @@
 package jpashop.domain;
 
 import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.Embeddable;
 
@@ -17,6 +16,7 @@ public class Address {
     // Constructor
     protected Address() {}
 
+    // Setter 사용시 해당 객체의 필드값이 어느 서비스와 관련되어 변경되는지 포인트를 찾을 수 없음.
     public Address(String city, String street, String zipcode) {
         this.city = city;
         this.street = street;
