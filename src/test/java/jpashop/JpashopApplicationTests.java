@@ -1,5 +1,0 @@
-package jpashop;
-
-class JpashopApplicationTests {
-
-}
