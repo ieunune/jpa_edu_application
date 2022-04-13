@@ -1,6 +1,7 @@
 package jpashop.domain;
 
 import jpashop.Category;
+import jpashop.exception.NotEnoughStockException;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,5 +28,18 @@ public abstract class Item {
     //        2. 연관관계 추가시 지속적으로 추가등 되어야 하나 관리 불가능
     @ManyToMany(mappedBy = "items", fetch = FetchType.LAZY)
     private List<Category> categories = new ArrayList<>();
+
+    // 재고 수량 증가
+    public void addStock(int quantity) {
+        this.stockQuantity += quantity;
+    }
+
+    // 재고 수량 감소
+    public void removeStock(int quantity) {
+        int tempCnt = this.stockQuantity - quantity;
+        if (tempCnt < 0) {
+            throw new NotEnoughStockException("need more stock");
+        }
+    }
 
 }
