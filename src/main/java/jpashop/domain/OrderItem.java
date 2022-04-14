@@ -33,7 +33,6 @@ public class OrderItem {
 
     // Method
     public static OrderItem createOrderItem(Item item, int orderPrice, int count) {
-        System.out.println(" count : " + count);
         OrderItem orderItem = new OrderItem();
         orderItem.setItem(item);
         orderItem.setOrderPrice(orderPrice);
