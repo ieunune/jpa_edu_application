@@ -15,7 +15,8 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create
+      # cerate -> none 설정 변경 재실행시 새로 생성하지 않기 위함
+      ddl-auto: none
     properties:
       hibernate:
         show_sql: true
